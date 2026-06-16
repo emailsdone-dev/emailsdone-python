@@ -4,9 +4,11 @@ build-backend = "setuptools.build_meta"
 
 [project]
 name = "emailsdone"
-version = "0.1.0"
+version = "0.1.10"
 description = "Template-first transactional email SDK for EmailsDone."
 readme = "README.md"
+license = "MIT"
+license-files = ["LICENSE"]
 requires-python = ">=3.9"
 authors = [
   { name = "EmailsDone" }
@@ -15,11 +17,27 @@ dependencies = [
   "requests>=2.31.0"
 ]
 keywords = ["emailsdone", "email", "transactional-email", "sdk"]
+classifiers = [
+  "Development Status :: 3 - Alpha",
+  "Intended Audience :: Developers",
+  "Operating System :: OS Independent",
+  "Programming Language :: Python :: 3",
+  "Programming Language :: Python :: 3 :: Only",
+  "Programming Language :: Python :: 3.9",
+  "Programming Language :: Python :: 3.10",
+  "Programming Language :: Python :: 3.11",
+  "Programming Language :: Python :: 3.12",
+  "Programming Language :: Python :: 3.13",
+  "Topic :: Communications :: Email",
+  "Topic :: Software Development :: Libraries :: Python Modules"
+]
 
 [project.urls]
 Documentation = "https://emailsdone.dev/docs/libraries/python/"
-Repository = "https://emailsdone.dev"
 Homepage = "https://emailsdone.dev/docs/libraries/python/"
+Repository = "https://github.com/emailsdone-dev/emailsdone-python"
+Issues = "https://github.com/emailsdone-dev/emailsdone-python/issues"
 
-[tool.setuptools.packages.find]
-where = ["src"]
+[tool.setuptools]
+package-dir = {"" = "EmailsDone/src"}
+py-modules = ["emailsdone", "client", "exceptions", "models", "templates"]
